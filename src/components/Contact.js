@@ -1,48 +1,31 @@
 export function renderContact() {
     return `
-      <section id="contact" class="py-20 bg-white dark:bg-slate-900">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-8">Let's Work Together</h2>
-            <p class="text-xl text-slate-600 dark:text-slate-300 mb-12">
+      <section id="contact" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Let's Connect</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full mb-8"></div>
+            
+            <p class="text-xl text-slate-600 dark:text-slate-300 mb-12 leading-relaxed max-w-2xl mx-auto">
                 Currently available for <span class="font-bold text-blue-600 dark:text-blue-400">Internship</span> and <span class="font-bold text-blue-600 dark:text-blue-400">Junior Software Developer</span> opportunities.
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
             </p>
             
-            <form id="contact-form" class="max-w-md mx-auto space-y-4 text-left">
-                <div>
-                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Name</label>
-                    <input type="text" id="name" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Your Name">
-                </div>
-                 <div>
-                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Email</label>
-                    <input type="email" id="email" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none" placeholder="john@example.com">
-                </div>
-                 <div>
-                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Message</label>
-                    <textarea id="message" rows="4" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none" placeholder="How can I help you?"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-colors">
-                    Send Message
-                </button>
-            </form>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="mailto:chumahitekani@gmail.com" class="group flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    <span>Send me an Email</span>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/hitekani-chuma-4276b9381" target="_blank" class="group flex items-center gap-3 px-8 py-4 bg-[#0077b5] text-white rounded-full font-bold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span>Connect on LinkedIn</span>
+                </a>
+            </div>
         </div>
       </section>
     `;
 }
 
 export function setupContactForm() {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        const subject = `Portfolio Contact from ${name}`;
-        const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-
-        window.location.href = `mailto:chumahitekani@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    });
+    // No-op since form is removed
 }
